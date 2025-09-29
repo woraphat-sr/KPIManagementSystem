@@ -1,0 +1,1251 @@
+{
+	"info": {
+		"_postman_id": "d04a8db4-1e4e-4424-a977-6a4e70459928",
+		"name": "KPI Management API V1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28053781",
+		"_collection_link": "https://dev-proces.postman.co/workspace/dev-proces-Workspace~5b9ec9b8-3515-42ae-8fd5-b8fb4e88d305/collection/28053781-d04a8db4-1e4e-4424-a977-6a4e70459928?action=share&source=collection_link&creator=28053781"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "auth-login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/auth/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "auth-register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"user3\",\r\n    \"email\":\"user3@user.com\",\r\n    \"password\":\"Art123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/auth/register",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "user-list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emailOrUsername\":\"\",\r\n    \"password\":\"\"\r\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/user",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emailOrUsername\":\"\",\r\n    \"password\":\"\"\r\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/users/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "role-user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emailOrUsername\":\"\",\r\n    \"password\":\"\"\r\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/users/roles",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test\",\r\n    \"email\": \"test@gmail.com\",\r\n    \"password\": \"Test123456\",\r\n    \"role_id\": \"68d4ea68362e0139a3a343e8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/users/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"\",\r\n    \"email\": \"\",\r\n    // \"password\": \"\",\r\n    \"role_id\": \"68d4ea68362e0139a3a343e9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/users/3",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"email\": \"\",\r\n    \"password\": \"\",\r\n    \"role_id\": \"68d4ea68362e0139a3a343e9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/users/3",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "profile-detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emailOrUsername\":\"\",\r\n    \"password\":\"\"\r\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/users/profile",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile-update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"testupdate@test.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/users/profile",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile-change password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"current_password\": \"newPassword456\",\r\n  \"new_password\": \"Test123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/users/change-password",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile-delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"testupdate@test.com\",\r\n    \"password\":\"Test123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/users/profile",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Kpi",
+			"item": [
+				{
+					"name": "kpi-list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"เพิ่มยอดขายรายเดือน\",\r\n    \"description\": \"ขยายช่องทางการตลาดออนไลน์เพื่อให้ยอดขายสูงขึ้น\",\r\n    \"target_value\": 5000000.00,\r\n    \"actual_value\": 5200000.00,\r\n    \"status\": \"On Track\",\r\n    \"assigned_user\": 2,\r\n    \"start_date\": \"2025-02-01\",\r\n    \"end_date\": \"2025-07-31\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/kpis",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"kpis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "kpi-by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"เพิ่มยอดขายรายเดือน\",\r\n    \"description\": \"ขยายช่องทางการตลาดออนไลน์เพื่อให้ยอดขายสูงขึ้น\",\r\n    \"target_value\": 5000000.00,\r\n    \"actual_value\": 5200000.00,\r\n    \"status\": \"On Track\",\r\n    \"assigned_user\": 2,\r\n    \"start_date\": \"2025-02-01\",\r\n    \"end_date\": \"2025-07-31\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/kpis/4",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"kpis",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "kpi-by user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"เพิ่มยอดขายรายเดือน\",\r\n    \"description\": \"ขยายช่องทางการตลาดออนไลน์เพื่อให้ยอดขายสูงขึ้น\",\r\n    \"target_value\": 5000000.00,\r\n    \"actual_value\": 5200000.00,\r\n    \"status\": \"On Track\",\r\n    \"assigned_user\": 2,\r\n    \"start_date\": \"2025-02-01\",\r\n    \"end_date\": \"2025-07-31\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/kpis/user/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"kpis",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "kpi-overdue",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"เพิ่มยอดขายรายเดือน\",\r\n    \"description\": \"ขยายช่องทางการตลาดออนไลน์เพื่อให้ยอดขายสูงขึ้น\",\r\n    \"target_value\": 5000000.00,\r\n    \"actual_value\": 5200000.00,\r\n    \"status\": \"On Track\",\r\n    \"assigned_user\": 2,\r\n    \"start_date\": \"2025-02-01\",\r\n    \"end_date\": \"2025-07-31\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/kpis/overdue",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"kpis",
+								"overdue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "kpi-by status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"เพิ่มยอดขายรายเดือน\",\r\n    \"description\": \"ขยายช่องทางการตลาดออนไลน์เพื่อให้ยอดขายสูงขึ้น\",\r\n    \"target_value\": 5000000.00,\r\n    \"actual_value\": 5200000.00,\r\n    \"status\": \"On Track\",\r\n    \"assigned_user\": 2,\r\n    \"start_date\": \"2025-02-01\",\r\n    \"end_date\": \"2025-07-31\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/kpis/status/Off Track",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"kpis",
+								"status",
+								"Off Track"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "kpi-create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"เพิ่มยอดขายรายเดือน\",\r\n    \"description\": \"ขยายช่องทางการตลาดออนไลน์เพื่อให้ยอดขายสูงขึ้น\",\r\n    \"target_value\": 5000000.01,\r\n    \"actual_value\": 0,\r\n    \"status\": \"On Track\",\r\n    \"assigned_user\": 1,\r\n    \"category_id\":1,\r\n    \"start_date\": \"2025-02-01\",\r\n    \"end_date\": \"2025-07-31\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/kpis",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"kpis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "kpi-update by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"เพิ่มยอดขายรายเดือน\",\r\n    \"description\": \"ขยายช่องทางการตลาดออนไลน์เพื่อให้ยอดขายสูงขึ้น\",\r\n    \"target_value\": 6000000.00,\r\n    \"actual_value\": 5200000.00,\r\n    \"status\": \"On Track\",\r\n    \"assigned_user\": 2,\r\n     \"category_id\":\"68d8257e4de3078bbb37603d\",\r\n    \"start_date\": \"2025-02-01\",\r\n    \"end_date\": \"2025-07-31\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/kpis/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"kpis",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "kpi-update-value by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"updated_value\": 4900000.05,\r\n    \"comment\": \"เดือนถัดมายอดดีขึ้น\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/kpis/4/update-value",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"kpis",
+								"4",
+								"update-value"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "kpi-delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"เพิ่มยอดขายรายเดือน\",\r\n    \"description\": \"ขยายช่องทางการตลาดออนไลน์เพื่อให้ยอดขายสูงขึ้น\",\r\n    \"target_value\": 6000000.00,\r\n    \"actual_value\": 5200000.00,\r\n    \"status\": \"On Track\",\r\n    \"assigned_user\": 2,\r\n    \"start_date\": \"2025-02-01\",\r\n    \"end_date\": \"2025-07-31\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/kpis/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"kpis",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "overview",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"เพิ่มยอดขายรายเดือน\",\r\n    \"description\": \"ขยายช่องทางการตลาดออนไลน์เพื่อให้ยอดขายสูงขึ้น\",\r\n    \"target_value\": 5000000.00,\r\n    \"actual_value\": 5200000.00,\r\n    \"status\": \"On Track\",\r\n    \"assigned_user\": 2,\r\n    \"start_date\": \"2025-02-01\",\r\n    \"end_date\": \"2025-07-31\"\r\n  }"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/dashboard/overview",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"overview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "trends",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"เพิ่มยอดขายรายเดือน\",\r\n    \"description\": \"ขยายช่องทางการตลาดออนไลน์เพื่อให้ยอดขายสูงขึ้น\",\r\n    \"target_value\": 5000000.00,\r\n    \"actual_value\": 5200000.00,\r\n    \"status\": \"On Track\",\r\n    \"assigned_user\": 2,\r\n    \"start_date\": \"2025-02-01\",\r\n    \"end_date\": \"2025-07-31\"\r\n  }"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/dashboard/trends",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"trends"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "status-distribution",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"เพิ่มยอดขายรายเดือน\",\r\n    \"description\": \"ขยายช่องทางการตลาดออนไลน์เพื่อให้ยอดขายสูงขึ้น\",\r\n    \"target_value\": 5000000.00,\r\n    \"actual_value\": 5200000.00,\r\n    \"status\": \"On Track\",\r\n    \"assigned_user\": 2,\r\n    \"start_date\": \"2025-02-01\",\r\n    \"end_date\": \"2025-07-31\"\r\n  }"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/dashboard/status-distribution",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"status-distribution"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "top-performing",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"เพิ่มยอดขายรายเดือน\",\r\n    \"description\": \"ขยายช่องทางการตลาดออนไลน์เพื่อให้ยอดขายสูงขึ้น\",\r\n    \"target_value\": 5000000.00,\r\n    \"actual_value\": 5200000.00,\r\n    \"status\": \"On Track\",\r\n    \"assigned_user\": 2,\r\n    \"start_date\": \"2025-02-01\",\r\n    \"end_date\": \"2025-07-31\"\r\n  }"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/dashboard/top-performing",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"top-performing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "recent-updates",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"เพิ่มยอดขายรายเดือน\",\r\n    \"description\": \"ขยายช่องทางการตลาดออนไลน์เพื่อให้ยอดขายสูงขึ้น\",\r\n    \"target_value\": 5000000.00,\r\n    \"actual_value\": 5200000.00,\r\n    \"status\": \"On Track\",\r\n    \"assigned_user\": 2,\r\n    \"start_date\": \"2025-02-01\",\r\n    \"end_date\": \"2025-07-31\"\r\n  }"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/dashboard/recent-updates",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"recent-updates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "analytics",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"เพิ่มยอดขายรายเดือน\",\r\n    \"description\": \"ขยายช่องทางการตลาดออนไลน์เพื่อให้ยอดขายสูงขึ้น\",\r\n    \"target_value\": 5000000.00,\r\n    \"actual_value\": 5200000.00,\r\n    \"status\": \"On Track\",\r\n    \"assigned_user\": 2,\r\n    \"start_date\": \"2025-02-01\",\r\n    \"end_date\": \"2025-07-31\"\r\n  }"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/dashboard/analytics",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"analytics"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "ctg-list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"เพิ่มยอดขายรายเดือน\",\r\n    \"description\": \"ขยายช่องทางการตลาดออนไลน์เพื่อให้ยอดขายสูงขึ้น\",\r\n    \"target_value\": 5000000.00,\r\n    \"actual_value\": 5200000.00,\r\n    \"status\": \"On Track\",\r\n    \"assigned_user\": 2,\r\n    \"start_date\": \"2025-02-01\",\r\n    \"end_date\": \"2025-07-31\"\r\n  }"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/categories",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ctg-create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sales & Marketing\",\r\n    \"description\": \"KPIs related to sales performance, marketing campaigns, and customer acquisition\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/categories",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ctg-update by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sales & Marketing\",\r\n    \"description\": \"KPIs related to sales performance, marketing campaigns, and customer acquisition\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/categories/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ctg-delete by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sales & Marketing\",\r\n    \"description\": \"KPIs related to sales performance, marketing campaigns, and customer acquisition\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/categories/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
